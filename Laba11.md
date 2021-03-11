@@ -1,5 +1,6 @@
-![](RackMultipart20210311-4-1ml64fe_html_72193920676a741d.png)
+![image](https://user-images.githubusercontent.com/80053204/110818556-6ec85b00-829e-11eb-80fc-55a0b5b8e701.png)
 
+Взаимодействие с другими людьми
 **Лабораторная работа. Базовая настройка коммутатора**
 
 1.
