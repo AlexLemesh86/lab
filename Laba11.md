@@ -58,7 +58,8 @@
 
       1. Подсоедините консольный кабель, как показано в топологии. На данном этапе не подключайте кабель Ethernet компьютера PC-A.
 
-![](RackMultipart20210311-4-1ml64fe_html_df91a1d2a729605d.png)
+![image](https://user-images.githubusercontent.com/80053204/110818779-a46d4400-829e-11eb-99ce-d8817e0cc327.png)
+
 
 #### Вопрос:
 
@@ -203,7 +204,8 @@ Switch# **dir flash:**
     1.
 ### Настройте базовые параметры коммутатора.
 
-![](RackMultipart20210311-4-1ml64fe_html_cb2489bfd5e66771.png)
+![image](https://user-images.githubusercontent.com/80053204/110819020-d7afd300-829e-11eb-8d5d-2c47c35eeb46.png)
+
 
 #### Вопрос:
 
@@ -214,7 +216,8 @@ Switch# **dir flash:**
     1.
 ### Настройте IP-адрес на компьютере PC-A.
 
-![](RackMultipart20210311-4-1ml64fe_html_57d90ec17d4d8221.png)
+![image](https://user-images.githubusercontent.com/80053204/110819531-53aa1b00-829f-11eb-9843-a8b3fa20ea31.png)
+
 
   1.
 ## Проверка сетевых подключений
@@ -507,12 +510,14 @@ S1# **show interface vlan 99**
     1.
 ### Протестируйте сквозное соединение, отправив эхо-запрос.
 
-![](RackMultipart20210311-4-1ml64fe_html_35478e73d0fef4f2.png)
+![image](https://user-images.githubusercontent.com/80053204/110819741-848a5000-829f-11eb-8ff1-403ceee49131.png)
+
 
     1.
 ### Проверьте удаленное управление коммутатором S1.
 
-![](RackMultipart20210311-4-1ml64fe_html_14ba546b4344b9aa.png)
+![image](https://user-images.githubusercontent.com/80053204/110819805-94a22f80-829f-11eb-85e0-91df5db08f43.png)
+
 
   1.
 ## Управление таблицей MAC-адресов
@@ -547,9 +552,11 @@ S1# **show mac address-table**
 
 **Ответ**** : **** Да, совпадают**
 
-![](RackMultipart20210311-4-1ml64fe_html_70a4bfb8900a9a2c.png)
+![image](https://user-images.githubusercontent.com/80053204/110819987-bef3ed00-829f-11eb-818e-e6c9f394d10f.png)
 
-![](RackMultipart20210311-4-1ml64fe_html_c0a8291a635c1068.png)
+
+![image](https://user-images.githubusercontent.com/80053204/110820048-ca471880-829f-11eb-95f4-6a15e80ca509.png)
+
 
     1.
 ### Перечислите параметры команды show mac address-table.
@@ -635,7 +642,8 @@ S1# **show mac address-table**
 
 **Ответ**** : **** ни одного**
 
-![](RackMultipart20210311-4-1ml64fe_html_7af3ef29868459e1.png)
+![image](https://user-images.githubusercontent.com/80053204/110820192-ef3b8b80-829f-11eb-8625-c67b0efd037d.png)
+
 
 Сколько статических адресов присутствует?
 
