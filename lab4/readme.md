@@ -2,12 +2,10 @@
 
 **Лабораторная работа. Настройка IPv6-адресов на сетевых устройствах**
 
-1.
 # Топология
 
 ![](RackMultipart20210418-4-12ru17o_html_9cb25354934b6ea1.png)
 
-1.
 # Таблица адресации
 
 | Устройство | Интерфейс | IPv6-адрес | Длина префикса | Шлюз по умолчанию |
@@ -254,14 +252,14 @@
 ### Активируйте IPv6-маршрутизацию на R1.
 
       1. В командной строке на PC-B введите команду **ipconfig** , чтобы получить данные IPv6-адреса, назначенного интерфейсу ПК.
-# FastEthernet0 Connection:(default port)
-# Connection-specific DNS Suffix..:
-# Link-local IPv6 Address.........: FE80::2D0:FFFF:FEAB:EE8A
-# IPv6 Address....................: ::
-# IPv4 Address....................: 0.0.0.0
-# Subnet Mask.....................: 0.0.0.0
-# Default Gateway.................: ::
-# 0.0.0.0
+** FastEthernet0 Connection:(default port)
+** Connection-specific DNS Suffix..:
+** Link-local IPv6 Address.........: FE80::2D0:FFFF:FEAB:EE8A
+** IPv6 Address....................: ::
+** IPv4 Address....................: 0.0.0.0
+** Subnet Mask.....................: 0.0.0.0
+** Default Gateway.................: ::
+** 0.0.0.0
 
 #### Вопрос:
 
@@ -277,16 +275,16 @@
 
       1. Теперь, когда R1 входит в группу многоадресной рассылки всех маршрутизаторов, еще раз введите команду **ipconfig** на PC-B. Проверьте данные IPv6-адреса.
 
-# C:\\&gt;ipconfig
+** C:\\&gt;ipconfig
 
-# FastEthernet0 Connection:(default port)
-# Connection-specific DNS Suffix..:
-# Link-local IPv6 Address.........: FE80::2D0:FFFF:FEAB:EE8A
-# IPv6 Address....................: 2001:DB8:ACAD:A:2D0:FFFF:FEAB:EE8A
-# IPv4 Address....................: 0.0.0.0
-# Subnet Mask.....................: 0.0.0.0
-# Default Gateway.................: FE80::1
-# 0.0.0.0
+** FastEthernet0 Connection:(default port)
+** Connection-specific DNS Suffix..:
+** Link-local IPv6 Address.........: FE80::2D0:FFFF:FEAB:EE8A
+** IPv6 Address....................: 2001:DB8:ACAD:A:2D0:FFFF:FEAB:EE8A
+** IPv4 Address....................: 0.0.0.0
+** Subnet Mask.....................: 0.0.0.0
+** Default Gateway.................: FE80::1
+** 0.0.0.0
 
 #### Вопрос:
 
@@ -298,21 +296,21 @@
 
       1. Назначьте адрес IPv6 для S1. Также назначьте этому интерфейсу локальный адрес канала.
       2. Проверьте правильность назначения IPv6-адресов интерфейсу управления с помощью команды show ipv6 interface vlan1.
-# Vlan1 is administratively down, line protocol is down
-# IPv6 is tentative, link-local address is FE80::1 [TEN]
-# No Virtual link-local address(es):
-# Global unicast address(es):
-# 2001:DB8:ACAD:1::B, subnet is 2001:DB8:ACAD:1::/64 [TEN]
-# Joined group address(es):
-# FF02::1
-# MTU is 1500 bytes
-# ICMP error messages limited to one every 100 milliseconds
-# ICMP redirects are enabled
-# ICMP unreachables are sent
-# Output features: Check hwidb
-# ND DAD is enabled, number of DAD attempts: 1
-# ND reachable time is 30000 milliseconds
-# ND NS retransmit interval is 1000 milliseconds
+** Vlan1 is administratively down, line protocol is down
+** IPv6 is tentative, link-local address is FE80::1 [TEN]
+** No Virtual link-local address(es):
+** Global unicast address(es):
+** 2001:DB8:ACAD:1::B, subnet is 2001:DB8:ACAD:1::/64 [TEN]
+** Joined group address(es):
+** FF02::1
+** MTU is 1500 bytes
+** ICMP error messages limited to one every 100 milliseconds
+** ICMP redirects are enabled
+** ICMP unreachables are sent
+** Output features: Check hwidb
+** ND DAD is enabled, number of DAD attempts: 1
+** ND reachable time is 30000 milliseconds
+** ND NS retransmit interval is 1000 milliseconds
 
 Закройте окно настройки.
 
