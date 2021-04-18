@@ -1,10 +1,10 @@
-![](RackMultipart20210418-4-12ru17o_html_72193920676a741d.png)
+![](RackMultipart20210418-4-adk3n9_html_72193920676a741d.png)
 
 **Лабораторная работа. Настройка IPv6-адресов на сетевых устройствах**
 
 # Топология
 
-![](RackMultipart20210418-4-12ru17o_html_9cb25354934b6ea1.png)
+![](RackMultipart20210418-4-adk3n9_html_9cb25354934b6ea1.png)
 
 # Таблица адресации
 
@@ -217,11 +217,17 @@
       1. Введите команду show ipv6 interface brief, чтобы проверить, назначен ли каждому интерфейсу корректный индивидуальный IPv6-адрес.
 
 **R1#show ipv6 interface brief**
+
 **GigabitEthernet0/0/0 [up/up]**
+
 **FE80::202:17FF:FEA3:9C01**
+
 **2001:DB8:ACAD:A::1**
+
 **GigabitEthernet0/0/1 [up/up]**
+
 **FE80::202:17FF:FEA3:9C02**
+
 **2001:DB8:ACAD:1::1**
 
 Примечание **. Отображаемый локальный адрес канала основан на адресации EUI-64, которая автоматически использует MAC-адрес интерфейса для создания 128-битного локального IPv6-адреса канала.**
@@ -231,13 +237,20 @@
 **Примечание**. Каждый интерфейс маршрутизатора относится к отдельной сети. Пакеты с локальным адресом канала никогда не выходят за пределы локальной сети, а значит, для обоих интерфейсов можно указывать один и тот же локальный адрес канала.
 
       1. Используйте выбранную команду, чтобы убедиться, что локальный адрес связи изменен на fe80::1.
-# R1#show ipv6 interface brief
-# GigabitEthernet0/0/0 [up/up]
-# FE80::1
-# 2001:DB8:ACAD:A::1
-# GigabitEthernet0/0/1 [up/up]
-# FE80::1
-# 2001:DB8:ACAD:1::1
+
+**R1#show ipv6 interface brief**
+
+**GigabitEthernet0/0/0 [up/up]**
+
+**FE80::1**
+
+**2001:DB8:ACAD:A::1**
+
+**GigabitEthernet0/0/1 [up/up]**
+
+**FE80::1**
+
+**2001:DB8:ACAD:1::1**
 
 Закройте окно настройки.
 
@@ -249,17 +262,18 @@
 
 **2001:DB8:ACAD:A::1, subnet is 2001:DB8:ACAD:A::/64**
 
+    1.
 ### Активируйте IPv6-маршрутизацию на R1.
 
       1. В командной строке на PC-B введите команду **ipconfig** , чтобы получить данные IPv6-адреса, назначенного интерфейсу ПК.
-** FastEthernet0 Connection:(default port)
-** Connection-specific DNS Suffix..:
-** Link-local IPv6 Address.........: FE80::2D0:FFFF:FEAB:EE8A
-** IPv6 Address....................: ::
-** IPv4 Address....................: 0.0.0.0
-** Subnet Mask.....................: 0.0.0.0
-** Default Gateway.................: ::
-** 0.0.0.0
+**FastEthernet0 Connection:(default port)**
+**Connection-specific DNS Suffix..:**
+**Link-local IPv6 Address.........: FE80::2D0:FFFF:FEAB:EE8A**
+**IPv6 Address....................: ::**
+**IPv4 Address....................: 0.0.0.0**
+**Subnet Mask.....................: 0.0.0.0**
+**Default Gateway.................: ::**
+**0.0.0.0**
 
 #### Вопрос:
 
@@ -275,16 +289,16 @@
 
       1. Теперь, когда R1 входит в группу многоадресной рассылки всех маршрутизаторов, еще раз введите команду **ipconfig** на PC-B. Проверьте данные IPv6-адреса.
 
-** C:\\&gt;ipconfig
+# C:\\&gt;ipconfig**
 
-** FastEthernet0 Connection:(default port)
-** Connection-specific DNS Suffix..:
-** Link-local IPv6 Address.........: FE80::2D0:FFFF:FEAB:EE8A
-** IPv6 Address....................: 2001:DB8:ACAD:A:2D0:FFFF:FEAB:EE8A
-** IPv4 Address....................: 0.0.0.0
-** Subnet Mask.....................: 0.0.0.0
-** Default Gateway.................: FE80::1
-** 0.0.0.0
+**FastEthernet0 Connection:(default port)**
+**Connection-specific DNS Suffix..:**
+**Link-local IPv6 Address.........: FE80::2D0:FFFF:FEAB:EE8A**
+**IPv6 Address....................: 2001:DB8:ACAD:A:2D0:FFFF:FEAB:EE8A**
+**IPv4 Address....................: 0.0.0.0**
+** ubnet Mask.....................: 0.0.0.0**
+**Default Gateway.................: FE80::1**
+**0.0.0.0**
 
 #### Вопрос:
 
@@ -292,25 +306,26 @@
 
 **Ответ: Компьютер входит в группу многоадресной рассылки**
 
+    1.
 ### Назначьте IPv6-адреса интерфейсу управления (SVI) на S1.
 
       1. Назначьте адрес IPv6 для S1. Также назначьте этому интерфейсу локальный адрес канала.
       2. Проверьте правильность назначения IPv6-адресов интерфейсу управления с помощью команды show ipv6 interface vlan1.
-** Vlan1 is administratively down, line protocol is down
-** IPv6 is tentative, link-local address is FE80::1 [TEN]
-** No Virtual link-local address(es):
-** Global unicast address(es):
-** 2001:DB8:ACAD:1::B, subnet is 2001:DB8:ACAD:1::/64 [TEN]
-** Joined group address(es):
-** FF02::1
-** MTU is 1500 bytes
-** ICMP error messages limited to one every 100 milliseconds
-** ICMP redirects are enabled
-** ICMP unreachables are sent
-** Output features: Check hwidb
-** ND DAD is enabled, number of DAD attempts: 1
-** ND reachable time is 30000 milliseconds
-** ND NS retransmit interval is 1000 milliseconds
+**Vlan1 is administratively down, line protocol is down**
+**IPv6 is tentative, link-local address is FE80::1 [TEN]**
+**No Virtual link-local address(es):**
+**Global unicast address(es):**
+**2001:DB8:ACAD:1::B, subnet is 2001:DB8:ACAD:1::/64 [TEN]**
+**Joined group address(es):**
+**FF02::1**
+**MTU is 1500 bytes**
+**ICMP error messages limited to one every 100 milliseconds**
+**ICMP redirects are enabled**
+**ICMP unreachables are sent**
+**Output features: Check hwidb**
+**ND DAD is enabled, number of DAD attempts: 1**
+**ND reachable time is 30000 milliseconds**
+**ND NS retransmit interval is 1000 milliseconds**
 
 Закройте окно настройки.
 
@@ -322,21 +337,23 @@
 
 С PC-A отправьте эхо-запрос на **FE80::1**. Это локальный адрес канала, назначенный G0/1 на R1.
 
-![](RackMultipart20210418-4-12ru17o_html_92a251616da652b6.png)
+![image](https://user-images.githubusercontent.com/80053204/115149473-0030a700-a06d-11eb-934d-0b0f433d5363.png)
 
 Отправьте эхо-запрос на интерфейс управления S1 с PC-A.
 
-![](RackMultipart20210418-4-12ru17o_html_9b7fb9e1e5000c98.png)
+![image](https://user-images.githubusercontent.com/80053204/115149482-0de62c80-a06d-11eb-9f6c-9b069f978c46.png)
 
 Введите команду **tracert** на PC-A, чтобы проверить наличие сквозного подключения к PC-B.
 
-![](RackMultipart20210418-4-12ru17o_html_e49014038f0ac31f.png)
+![image](https://user-images.githubusercontent.com/80053204/115149504-1fc7cf80-a06d-11eb-9d97-0214810c75a3.png)
 
 С PC-B отправьте эхо-запрос на PC-A.
 
-![](RackMultipart20210418-4-12ru17o_html_57ddf0680c5b459f.png)
+![image](https://user-images.githubusercontent.com/80053204/115149514-29e9ce00-a06d-11eb-9c00-a8d687d1b37c.png)
 
 С PC-B отправьте эхо-запрос на локальный адрес канала G0/0 на R1.
+
+![image](https://user-images.githubusercontent.com/80053204/115149844-8dc0c680-a06e-11eb-981d-6ea885a3293e.png)
 
 **Примечание.** В случае отсутствия сквозного подключения проверьте, правильно ли указаны IPv6-адреса на всех устройствах.
 
@@ -344,7 +361,7 @@
 
   1. Почему обоим интерфейсам Ethernet на R1 можно назначить один и тот же локальный адрес канала — FE80::1?
 
-**Ответ: Каждый интерфейс маршрутизатора находится в отдельной сети. Пакеты с локальным адресом канала никогда не покидают локальную сеть, а значит, для обоих интерфейсов можно указывать один и тот же локальный адрес канала**
+**Ответ:**  **Каждый**  **интерфейс маршрутизатора находится в отдельной сети. Пакеты с локальным адресом канала никогда не покидают локальную сеть, а значит, для обоих интерфейсов можно указывать один и тот же локальный адрес канала**
 
   1. Какой идентификатор подсети в индивидуальном IPv6-адресе 2001:db8:acad::aaaa:1234/64?
 
